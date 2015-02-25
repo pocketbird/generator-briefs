@@ -14,36 +14,38 @@ $base-border-radius: em(3);
 $content-padding: em(50);
 
 // Base Colors
+$black: #000000;
 $blue: #069DD9;
 $blue--light: #08A8E7;
 $blue--dark: #088DC2;
-$green: #45B267;
-$green--light: #51C374;
-$green--dark: #3A9355;
-$red: #E4282A;
-$red--light: #FE292B;
-$red--dark: #C02426;
-$yellow: #F5B725;
-$yellow--light: #FFC230;
-$yellow--dark: #D9A426;
 $light-gray: #EFEFEF;
 $light-gray--light: #FCFCFC;
 $light-gray--dark: #DEDEDE;
 $dark-gray: #4C5962;
 $dark-gray--light: #353C42;
 $dark-gray--dark: #232A31;
-$teal: #06C8D9;
-$teal--light: #0CDEF0;
-$teal--dark: #09B1BF;
+$green: #45B267;
+$green--light: #51C374;
+$green--dark: #3A9355;
 $purple: #6D5BAE;
 $purple--light: #8677BC;
 $purple--dark: #5C4D93;
+$red: #E4282A;
+$red--light: #FE292B;
+$red--dark: #C02426;
+$teal: #06C8D9;
+$teal--light: #0CDEF0;
+$teal--dark: #09B1BF;
+$white: #FFFFFF;
+$yellow: #F5B725;
+$yellow--light: #FFC230;
+$yellow--dark: #D9A426;
 
 // Background Color
 $base-background-color: $white;
 
 // Font Colors
-$base-font-color: $gray--dark;
+$base-font-color: $light-gray--dark;
 $base-accent-color: $blue;
 
 // Link Colors
@@ -53,11 +55,11 @@ $base-button-color: $base-link-color;
 $base-button-color--hover: $base-link-color--hover;
 
 // Border color
-$base-border-color: $gray--light;
+$base-border-color: $light-gray--light;
 
 // Brand/Status Colors
 $primary-color: $blue;
-$warning-color:   $yellow;
+$warning-color: $yellow;
 $error-color:   $red;
 $notice-color:  $purple;
 $success-color: $green;

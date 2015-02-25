@@ -13,7 +13,7 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: ['<%%= yeoman.app %>/styles/**/*.{scss,sass}'],
-        tasks: ['sass:server']
+        tasks: ['sass:server', 'sass:bsServer']
       },<% if (jsPre === 'coffeescript') { %>
       coffee: {
         files: ['<%%= yeoman.app %>/scripts/**/*.coffee'],
@@ -119,6 +119,15 @@ module.exports = function (grunt) {
           cwd: '<%%= yeoman.app %>/styles',
           src: '*.{scss,sass}',
           dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      },
+      bsServer: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/styles',
+          src: '*.{scss,sass}',
+          dest: 'app/styles',
           ext: '.css'
         }]
       }
@@ -356,11 +365,41 @@ module.exports = function (grunt) {
         'coffee:dist',<% } %>
         'jekyll:server'
       ],
+      bsServer: [
+        'sass:bsServer',
+        'jekyll:server'
+      ],
       dist: [
         'sass:dist',<% if (jsPre === 'coffeescript') { %>
         'coffee:dist',<% } %>
         'copy:dist'
       ]
+    },
+    browserSync: {
+      server: {
+        bsFiles: {
+          src: [
+            'app/styles/*.css',
+            'app/scripts/**/*.js',
+            'app/*.html',
+            '.jekyll/*.{html,yml,md,mkd,markdown}'
+          ]
+        },
+        options: {
+          watchTask: true,
+          server: {
+            baseDir: [
+              '.jekyll/'
+            ],
+            routes: {
+              '/vendor': './vendor',
+              '/styles': './app/styles',
+              '/scripts': './app/scripts',
+              '/images': './app/images'
+            }
+          }
+        }
+      }
     }
   });
 
@@ -377,6 +416,14 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
+
+  // Serve files with BrowserSync
+  grunt.registerTask('serve-bs', [
+    'clean:server',
+    'concurrent:bsServer',
+    'browserSync',
+    'watch'
+  ]);
 
   grunt.registerTask('check', [
     'clean:server',

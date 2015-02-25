@@ -42,17 +42,17 @@ BriefsGenerator.prototype.askForUser = function askForUser() {
   var prompts = [
     {
       name: 'authorName',
-      message: 'What is your name?  (You wouldn\'t want to get them confused with someone elses... or would you?)',
+      message: 'What name should I write on the tag?',
       default: this.gitInfo.name
     },
     {
       name: 'authorEmail',
-      message: 'What is your email?  (In case you lose your briefs...)',
+      message: 'What email should I use to contact you if I find your briefs?',
       default: this.gitInfo.email
     }
   ];
 
-  console.log(yosay('Briefs (brēfs) [plural noun]: close-fitting legless underpants that are cut so as to cover the body to the waist, in contrast to a bikini.'));
+  console.log(yosay('' + chalk.cyan('Briefs (brēfs)') + '\n1. close-fitting legless underpants that are cut so as to cover the body to the waist, in contrast to a bikini.  2. Undergarments for your project.'));
   console.log(chalk.yellow('Color.  Size.  Pattern.  Tell me how you like your briefs') + ' →');
 
   this.prompt(prompts, function (props) {

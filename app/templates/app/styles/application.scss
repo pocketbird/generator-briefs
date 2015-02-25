@@ -13,9 +13,9 @@
 
 /* Global: Globally available variables and config.
  * -----------------------------------------------------------------------------*/
-@import "bourbon/app/assets/stylesheets/bourbon";
+@import "bower_components/bourbon/dist/bourbon";
 @import "global/grid-settings";
-@import "neat/app/assets/stylesheets/neat";
+@import "bower_components/neat/app/assets/stylesheets/neat";
 @import "global/fonts";
 @import "global/variables";
 
