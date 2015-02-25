@@ -1,0 +1,59 @@
+%clearfix {
+  @include clearfix;
+}
+
+%hide-text {
+  @include hide-text;
+}
+
+%pull-left {
+  float: left !important;
+}
+
+%pull-right {
+  float: right !important;
+}
+
+%text-left {
+  text-align: left !important;
+}
+
+%text-center {
+  text-align: center !important;
+}
+
+%text-right {
+  text-align: right !important;
+}
+
+%valign-top {
+  vertical-align: top !important;
+}
+
+%valign-middle {
+  vertical-align: middle !important;
+}
+
+%valign-bottom {
+  vertical-align: bottom !important;
+}
+
+%relative {
+  position: relative !important;
+}
+
+%no-margin {
+  margin: 0 !important;
+}
+
+%flush-top {
+  margin-top: 0 !important;
+}
+
+%flush-bottom {
+  margin-bottom: 0 !important;
+}
+
+%no-padding {
+  padding: 0 !important;
+}

@@ -1,0 +1,48 @@
+////
+/// @group buttons
+/// @author Colin Carter
+////
+
+/// Base (reset) styles for buttons
+%button {
+  -webkit-font-smoothing: antialiased;
+  background-color: $base-button-color;
+  border-radius: $base-border-radius;
+  color: white;
+  display: inline-block;
+  font-size: $base-font-size;
+  font-weight: bold;
+  line-height: 1;
+  padding: .75em 1em;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $base-button-color--hover;
+    color: white;
+  }
+
+  &.disabled,
+  &[disabled] {
+    &,
+    &:hover,
+    &:focus,
+    &:visited,
+    &:active,
+    &.active {
+      opacity: 0.5;
+    }
+  }
+}
+
+button,
+input[type="submit"] {
+  @extend %button;
+  @include appearance(none);
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+// Button variants (i.e. colors, sizes, with-icon) are located in component/_buttons.scss

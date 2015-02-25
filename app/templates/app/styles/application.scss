@@ -1,0 +1,60 @@
+// @import 'bourbon/app/assets/stylesheets/bourbon';
+// @import 'base/base';
+// @import 'neat/app/assets/stylesheets/neat';
+// @import 'delete-me';
+
+/*
+ * This file should only comprise of @imports.
+ * Place all styles in appropriately named files.
+ * See the ToC in _application.scss
+ */
+
+
+
+/* Global: Globally available variables and config.
+ * -----------------------------------------------------------------------------*/
+@import "bourbon/app/assets/stylesheets/bourbon";
+@import "global/grid-settings";
+@import "neat/app/assets/stylesheets/neat";
+@import "global/variables";
+
+
+
+/* Tools/Mixins
+ * -----------------------------------------------------------------------------*/
+@import "base/mixins/background-opacity";
+@import "base/mixins/button-variant";
+@import "base/mixins/flash";
+@import "base/mixins/link-variant";
+@import "base/mixins/placeholder";
+@import "base/mixins/selection";
+@import "base/mixins/text-overflow";
+
+
+
+/* Base: Level the playing field.  Resets.
+ * -----------------------------------------------------------------------------*/
+@import "base/typography"; // Reserved for base typography reset styles
+@import "base/forms"; // Reserved for base form reset styles
+@import "base/buttons"; // Reserved for base button reset styles
+@import "base/tables"; // Reserved for base table reset styles
+@import "base/lists"; // Reserved for base list reset styles
+@import "base/fonts"; // Put fonts here
+
+
+
+/* Objects
+ * -----------------------------------------------------------------------------*/
+@import "objects/button-variants";
+@import "objects/icons";
+@import "objects/flashes";
+@import "objects/media-object";
+@import "objects/pagination";
+@import "objects/tooltips";
+
+
+
+/* Trumps/Helpers/Overrides
+ * -----------------------------------------------------------------------------*/
+@import "trumps/utilities";
+@import "delete-me";

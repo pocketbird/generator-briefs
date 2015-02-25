@@ -1,0 +1,106 @@
+// Namespace
+$namespace: '';
+
+// Typography
+$sans-serif: $helvetica;
+$serif: $georgia;
+$base-font-family: $sans-serif;
+$header-font-family: $base-font-family;
+
+// Sizes
+$base-font-size: 1em;
+$base-line-height: $base-font-size * 1.5;
+$unitless-line-height: $base-line-height / ($base-line-height * 0 + 1); // Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
+$header-height: em(65);
+$header-line-height: $base-font-size * 1.25;
+$base-border-radius: em(3);
+$content-padding: em(50);
+
+// Base Colors
+$blue: #069DD9;
+$blue--light: #08A8E7;
+$blue--dark: #088DC2;
+$green: #45B267;
+$green--light: #51C374;
+$green--dark: #3A9355;
+$red: #E4282A;
+$red--light: #FE292B;
+$red--dark: #C02426;
+$yellow: #F5B725;
+$yellow--light: #FFC230;
+$yellow--dark: #D9A426;
+$light-gray: #EFEFEF;
+$light-gray--light: #FCFCFC;
+$light-gray--dark: #DEDEDE;
+$dark-gray: #4C5962;
+$dark-gray--light: #353C42;
+$dark-gray--dark: #232A31;
+$teal: #06C8D9;
+$teal--light: #0CDEF0;
+$teal--dark: #09B1BF;
+$purple: #6D5BAE;
+$purple--light: #8677BC;
+$purple--dark: #5C4D93;
+
+
+// Colors
+// $blue:          #477DCA;
+$gray--dark:    #333;
+$gray--medium:  #999;
+$gray--light:   #DDD;
+$green--light:  #E6EFC2;
+$red--light:    #FBE3E4;
+$yellow--light: #FFF6BF;
+$white:         #FFFFFF;
+
+// Background Color
+$base-background-color: white;
+
+// Font Colors
+$base-font-color: $gray--dark;
+$base-accent-color: $blue;
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$base-link-color--hover: darken($base-accent-color, 15);
+$base-button-color: $base-link-color;
+$base-button-color--hover: $base-link-color--hover;
+
+// Border color
+$base-border-color: $gray--light;
+
+// Brand/Status Colors
+$primary-color: $blue;
+$warning-color:   $yellow;
+$error-color:   $red;
+$notice-color:  $purple;
+$success-color: $green;
+
+// Forms
+$form__border-color: $base-border-color;
+$form__border-color--hover: darken($base-border-color, 10);
+$form__border-color--focus: $base-accent-color;
+$form__border-radius: $base-border-radius;
+$form__box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+$form__box-shadow--focus: $form__box-shadow, 0 0 5px rgba(darken($form__border-color--focus, 5), 0.7);
+$form__font-size: $base-font-size;
+$form__font-family: $base-font-family;
+
+// Media object
+$media-gutter: 1em;
+
+// Sidebar
+$sidebar__width: em(300);
+$sidebar__width--collapsed: em(75);
+
+// Border
+$base-border: 1px solid $base-border-color;
+
+// Tooltips
+$tooltip__background-color: $white;
+$tooltip__border: $base-border;
+$tooltip__border-radius: $base-border-radius;
+$tooltip__font-color: $base-font-color;
+$tooltip__font-family: $base-font-family;
+$tooltip__font-size: $base-font-size;
+$tooltip__padding: 0.5em;
