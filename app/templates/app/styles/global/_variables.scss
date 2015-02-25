@@ -1,6 +1,3 @@
-// Namespace
-$namespace: '';
-
 // Typography
 $sans-serif: $helvetica;
 $serif: $georgia;
@@ -42,19 +39,8 @@ $purple: #6D5BAE;
 $purple--light: #8677BC;
 $purple--dark: #5C4D93;
 
-
-// Colors
-// $blue:          #477DCA;
-$gray--dark:    #333;
-$gray--medium:  #999;
-$gray--light:   #DDD;
-$green--light:  #E6EFC2;
-$red--light:    #FBE3E4;
-$yellow--light: #FFF6BF;
-$white:         #FFFFFF;
-
 // Background Color
-$base-background-color: white;
+$base-background-color: $white;
 
 // Font Colors
 $base-font-color: $gray--dark;
@@ -89,18 +75,5 @@ $form__font-family: $base-font-family;
 // Media object
 $media-gutter: 1em;
 
-// Sidebar
-$sidebar__width: em(300);
-$sidebar__width--collapsed: em(75);
-
 // Border
 $base-border: 1px solid $base-border-color;
-
-// Tooltips
-$tooltip__background-color: $white;
-$tooltip__border: $base-border;
-$tooltip__border-radius: $base-border-radius;
-$tooltip__font-color: $base-font-color;
-$tooltip__font-family: $base-font-family;
-$tooltip__font-size: $base-font-size;
-$tooltip__padding: 0.5em;

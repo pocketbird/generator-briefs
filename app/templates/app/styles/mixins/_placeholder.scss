@@ -1,5 +1,3 @@
-/// Form placeholder text
-/// Accepts styling for placeholder content
 @mixin placeholder {
   &.placeholder { @content }
   &:-moz-placeholder { @content }

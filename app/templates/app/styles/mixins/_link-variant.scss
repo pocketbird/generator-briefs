@@ -1,4 +1,3 @@
-/// Add styles to link variants
 @mixin link-variant($base-color, $hover-color: darken($base-color, 7)) {
   color: $base-color;
 

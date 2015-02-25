@@ -1,9 +1,3 @@
-////
-/// @group buttons
-/// @author Colin Carter
-////
-
-/// Base (reset) styles for buttons
 %button {
   -webkit-font-smoothing: antialiased;
   background-color: $base-button-color;
@@ -44,5 +38,3 @@ input[type="submit"] {
   vertical-align: middle;
   white-space: nowrap;
 }
-
-// Button variants (i.e. colors, sizes, with-icon) are located in component/_buttons.scss

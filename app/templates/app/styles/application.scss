@@ -16,41 +16,32 @@
 @import "bourbon/app/assets/stylesheets/bourbon";
 @import "global/grid-settings";
 @import "neat/app/assets/stylesheets/neat";
+@import "global/fonts";
 @import "global/variables";
 
 
 
 /* Tools/Mixins
  * -----------------------------------------------------------------------------*/
-@import "base/mixins/background-opacity";
-@import "base/mixins/button-variant";
-@import "base/mixins/flash";
-@import "base/mixins/link-variant";
-@import "base/mixins/placeholder";
-@import "base/mixins/selection";
-@import "base/mixins/text-overflow";
+@import "mixins/background-opacity";
+@import "mixins/button-variant";
+@import "mixins/flash";
+@import "mixins/link-variant";
+@import "mixins/placeholder";
+@import "mixins/selection";
+@import "mixins/text-overflow";
 
 
 
-/* Base: Level the playing field.  Resets.
+/* Components
+ * Base: HTML elements.
  * -----------------------------------------------------------------------------*/
-@import "base/typography"; // Reserved for base typography reset styles
-@import "base/forms"; // Reserved for base form reset styles
-@import "base/buttons"; // Reserved for base button reset styles
-@import "base/tables"; // Reserved for base table reset styles
-@import "base/lists"; // Reserved for base list reset styles
-@import "base/fonts"; // Put fonts here
-
-
-
-/* Objects
- * -----------------------------------------------------------------------------*/
-@import "objects/button-variants";
-@import "objects/icons";
-@import "objects/flashes";
-@import "objects/media-object";
-@import "objects/pagination";
-@import "objects/tooltips";
+@import "components/base/buttons";
+@import "components/base/forms";
+@import "components/base/lists";
+@import "components/base/tables";
+@import "components/base/typography";
+@import "components/media-object";
 
 
 
