@@ -49,7 +49,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          open: true,
+          open: false,
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
@@ -97,7 +97,7 @@ module.exports = function (grunt) {
         loadPath: './vendor'
       },<% } %><% if (sassComp === 'libsass') { %>
       options: {
-        sourceMap: false,
+        sourceMap: true,
         includePaths: ['./vendor']
       },<% } %>
       dist: {
