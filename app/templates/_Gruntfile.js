@@ -13,7 +13,7 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: ['<%%= yeoman.app %>/styles/**/*.{scss,sass}'],
-        tasks: ['sass:server', 'sass:bsServer']
+        tasks: ['sass:server']
       },<% if (jsPre === 'coffeescript') { %>
       coffee: {
         files: ['<%%= yeoman.app %>/scripts/**/*.coffee'],
@@ -119,15 +119,6 @@ module.exports = function (grunt) {
           cwd: '<%%= yeoman.app %>/styles',
           src: '*.{scss,sass}',
           dest: '.tmp/styles',
-          ext: '.css'
-        }]
-      },
-      bsServer: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/styles',
-          src: '*.{scss,sass}',
-          dest: 'app/styles',
           ext: '.css'
         }]
       }
@@ -365,10 +356,6 @@ module.exports = function (grunt) {
         'coffee:dist',<% } %>
         'jekyll:server'
       ],
-      bsServer: [
-        'sass:bsServer',
-        'jekyll:server'
-      ],
       dist: [
         'sass:dist',<% if (jsPre === 'coffeescript') { %>
         'coffee:dist',<% } %>
@@ -379,25 +366,12 @@ module.exports = function (grunt) {
       server: {
         bsFiles: {
           src: [
-            'app/styles/*.css',
-            'app/scripts/**/*.js',
-            'app/*.html',
-            '.jekyll/*.{html,yml,md,mkd,markdown}'
+            // grunt-contrib-watch handles all src files
           ]
         },
         options: {
           watchTask: true,
-          server: {
-            baseDir: [
-              '.jekyll/'
-            ],
-            routes: {
-              '/vendor': './vendor',
-              '/styles': './app/styles',
-              '/scripts': './app/scripts',
-              '/images': './app/images'
-            }
-          }
+          proxy: '0.0.0.0:9000' // Proxy the connect:livereload server
         }
       }
     }
@@ -413,17 +387,10 @@ module.exports = function (grunt) {
       'clean:server',
       'concurrent:server',
       'connect:livereload',
+      'browserSync',
       'watch'
     ]);
   });
-
-  // Serve files with BrowserSync
-  grunt.registerTask('serve-bs', [
-    'clean:server',
-    'concurrent:bsServer',
-    'browserSync',
-    'watch'
-  ]);
 
   grunt.registerTask('check', [
     'clean:server',
