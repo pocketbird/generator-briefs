@@ -102,6 +102,66 @@ BriefsGenerator.prototype.askForTools = function askForTools() {
   }.bind(this));
 };
 
+// BriefsGenerator.prototype.askForMixins = function askForMixins() {
+//   var cb = this.async();
+//   var prompts = [
+//     {
+//       name: 'mixins',
+//       type: 'checkbox',
+//       message: 'What Mixin Libraries would you like to use?  Press `space` to select.',
+//       choices: [
+//         {
+//           name: 'Bourbon',
+//           value: 'includeBourbon',
+//           checked: false
+//         },
+//         {
+//           name: 'Neat'
+//           value: 'includeNeat',
+//           checked: false
+//         }
+//       ]
+//     }
+//   ]
+
+//   console.log(chalk.yellow('\nMixin Libraries.') + ' →');
+
+//   this.prompt(prompts, function (props) {
+
+//     var mixinLibraries = props.mixinLibraries;
+
+//     function hasMixinLibrary (library) {
+//       return mixinLibraries.indexOf(library) !== -1;
+//     }
+
+//     this.includeBourbon = hasMixinLibrary('includeBourbon');
+//     this.includeNeat = hasMixinLibrary('includeNeat');
+
+//     cb();
+//   }.bind(this));
+// };
+
+BriefsGenerator.prototype.askForUI = function askForUI() {
+  var cb = this.async();
+  var prompts = [
+    {
+      name: 'ui',
+      type: 'list',
+      message: 'What UI Framework would you like to use?',
+      choices: ['None', 'Bootstrap', 'Foundation', 'Materialize']
+    }
+  ]
+
+  console.log(chalk.yellow('\nFront-end Frameworks.') + ' →');
+
+  this.prompt(prompts, function (props) {
+
+    this.ui = props.ui === 'None' ? false : props.ui.toLowerCase();
+
+    cb();
+  }.bind(this));
+};
+
 BriefsGenerator.prototype.askForDeployment = function askForDeployment() {
   var cb = this.async();
   var prompts = [
@@ -235,6 +295,29 @@ BriefsGenerator.prototype.jsPreprocessor = function jsPreprocessor() {
     this.copy('conditional/coffee/app.coffee', 'app/scripts/app.coffee');
   } else {
     this.copy('conditional/javascript/app.js', 'app/scripts/app.js');
+  }
+};
+
+// BriefsGenerator.prototype.mixinLibraries = function mixinLibraries() {
+//   if (this.includeBourbon) {
+//     this.copy('conditional/styles/application.bootstrap.scss', 'app/styles/application.scss');
+//   }
+//   if (this.includeNeat) {
+//     this.copy('conditional/styles/application.foundation.scss', 'app/styles/application.scss');
+//   }
+// };
+
+BriefsGenerator.prototype.uiFramework = function uiFramework() {
+  if (this.ui === 'Bootstrap') {
+    this.copy('conditional/styles/application.bootstrap.scss', 'app/styles/application.scss');
+  }
+  if (this.ui === 'Foundation') {
+    this.copy('conditional/styles/application.foundation.scss', 'app/styles/application.scss');
+  }
+  if (this.ui === 'Materialize') {
+    this.copy('conditional/styles/application.materialize.scss', 'app/styles/application.scss');
+  } else {
+    this.copy('conditional/styles/application.default.scss', 'app/styles/application.scss');
   }
 };
 

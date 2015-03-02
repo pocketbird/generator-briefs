@@ -1,8 +1,3 @@
-// @import 'bourbon/app/assets/stylesheets/bourbon';
-// @import 'base/base';
-// @import 'neat/app/assets/stylesheets/neat';
-// @import 'delete-me';
-
 /*
  * This file should only comprise of @imports.
  * Place all styles in appropriately named files.
@@ -12,12 +7,19 @@
 
 
 /* Global: Globally available variables and config.
+ * Materialize
+ * Bourbon
+ * Grid Settings/Neat
+ * Fonts
+ * Variables
  * -----------------------------------------------------------------------------*/
+@import "bower_components/materialize/sass/materialize.scss";
 @import "bower_components/bourbon/dist/bourbon";
 @import "global/grid-settings";
 @import "bower_components/neat/app/assets/stylesheets/neat";
 @import "global/fonts";
 @import "global/variables";
+
 
 
 
