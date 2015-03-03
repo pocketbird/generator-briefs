@@ -18,8 +18,8 @@
 @import "global/grid-settings";
 @import "bower_components/neat/app/assets/stylesheets/neat";<% } %>
 @import "global/fonts";
-@import "global/variables";
-
+@import "global/variables";<% if (barspoon) { %>
+@import "codefashioned/barspoon/barspoon";<% } %>
 
 
 /* Tools/Mixins

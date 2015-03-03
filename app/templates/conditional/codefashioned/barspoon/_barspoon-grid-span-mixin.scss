@@ -1,0 +1,21 @@
+@mixin grid-span($grid-span) {
+  @include span-columns($grid-span);
+
+  &--screen-sm {
+    @include media($screen-sm) {
+      @include span-columns($grid-span);
+    }
+  }
+
+  &--screen-md {
+    @include media($screen-md) {
+      @include span-columns($grid-span);
+    }
+  }
+
+  &--screen-lg {
+    @include media($screen-lg) {
+      @include span-columns($grid-span);
+    }
+  }
+}

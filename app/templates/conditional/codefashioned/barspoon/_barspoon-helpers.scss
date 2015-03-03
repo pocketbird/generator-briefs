@@ -1,0 +1,147 @@
+.grid {
+  @include clearfix;
+}
+
+.row {
+  @include span-columns(12);
+}
+
+.one-half,
+.two-fourths,
+.three-sixths {
+  @include grid-span(6);
+
+  &.shift-center {
+    @include shift(3);
+  }
+
+  &.shift-right {
+    @include shift(6);
+  }
+}
+
+.one-third,
+.two-sixths {
+  @include grid-span(4);
+
+  &.shift-center {
+    @include shift(4);
+  }
+
+  &.shift-right {
+    @include shift(8);
+  }
+}
+
+.two-thirds,
+.four-sixths {
+  @include grid-span(8);
+
+  &.shift-center {
+    @include shift(2);
+  }
+
+  &.shift-right {
+    @include shift(4);
+  }
+}
+
+.one-fourth {
+  @include grid-span(3);
+
+  &.shift-center {
+    @include shift(4.5);
+  }
+
+  &.shift-right {
+    @include shift(9);
+  }
+}
+
+.three-fourths {
+  @include grid-span(9);
+
+  &.shift-center {
+    @include shift(1.5);
+  }
+
+  &.shift-right {
+    @include shift(3);
+  }
+}
+
+%one-fifth {
+  @include grid-span(3 of 15);
+
+  &.shift-center {
+    @include shift(6 of 15);
+  }
+
+  &.shift-right {
+    @include shift(12 of 15);
+  }
+}
+
+%two-fifths {
+  @include grid-span(6 of 15);
+
+  &.shift-center {
+    @include shift(4.5 of 15);
+  }
+
+  &.shift-right {
+    @include shift(9 of 15);
+  }
+}
+
+%three-fifths {
+  @include grid-span(9 of 15);
+
+  &.shift-center {
+    @include shift(3 of 15);
+  }
+
+  &.shift-right {
+    @include shift(6 of 15);
+  }
+}
+
+%four-fifths {
+  @include grid-span(12 of 15);
+
+  &.shift-center {
+    @include shift(3);
+  }
+
+  &.shift-right {
+    @include shift(6);
+  }
+}
+
+.one-sixth {
+  @include grid-span(2);
+
+  &.shift-center {
+    @include shift(5);
+  }
+
+  &.shift-right {
+    @include shift(10);
+  }
+}
+
+.five-sixths {
+  @include grid-span(10);
+
+  &.shift-center {
+    @include shift(1);
+  }
+
+  &.shift-right {
+    @include shift(2);
+  }
+}
+
+.twelve {
+  @include grid-span(12);
+}

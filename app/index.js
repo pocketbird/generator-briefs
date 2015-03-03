@@ -6,7 +6,7 @@ var yosay = require('yosay');
 var yeoman = require('yeoman-generator');
 var globule = require('globule');
 var shelljs = require('shelljs');
-
+var inquirer = require("inquirer");
 
 var BriefsGenerator = module.exports = function BriefsGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
@@ -104,30 +104,86 @@ BriefsGenerator.prototype.askForTools = function askForTools() {
 
 BriefsGenerator.prototype.askForMixins = function askForMixins() {
   var cb = this.async();
+//   var prompts = [
+//     {
+//       name: 'bourbon',
+//       type: 'confirm',
+//       message: 'Include Bourbon?',
+//       default: false
+//     },
+//     {
+//       name: 'neat',
+//       value: 'neat',
+//       type: 'confirm',
+//       message: 'Include Neat?',
+//       default: false
+//     }
+//   ]
+
+//   var barspoonPrompt = [
+//     {
+//       name: 'barspoon',
+//       type: 'confirm',
+//       message: 'Include BarSpoon (Bootstrap-style Neat grid helpers)?',
+//       default: false
+//     }
+//   ]
+
+//   console.log(chalk.yellow('\nMixin Libraries.') + ' →');
+
+//   this.prompt(prompts, function (props) {
+//     this.bourbon = props.bourbon;
+//     this.neat = props.neat;
+
+//     cb();
+//   }.bind(this));
+// };
+
   var prompts = [
     {
-      name: 'bourbon',
-      type: 'confirm',
-      message: 'Include Bourbon?',
+      type: "confirm",
+      name: "bourbon",
+      message: "Include Bourbon?",
       default: false
     },
     {
-      name: 'neat',
-      type: 'confirm',
-      message: 'Include Neat?',
-      default: false
+      type: "confirm",
+      name: "neat",
+      message: "Include Neat?",
+      when: function ( answers ) {
+        return answers.bourbon;
+      }
+    },
+    {
+      type: "confirm",
+      name: "barspoon",
+      message: "Include BarSpoon (Bootstrap-style Neat grid helpers)?",
+      when: function ( answers ) {
+        return answers.neat;
+      }
     }
   ]
 
-  console.log(chalk.yellow('\Mixin Libraries.') + ' →');
+  console.log(chalk.yellow('\nMixin Libraries.') + ' →');
 
   this.prompt(prompts, function (props) {
     this.bourbon = props.bourbon;
     this.neat = props.neat;
+    this.barspoon = props.barspoon;
 
     cb();
   }.bind(this));
 };
+
+  // function likesFood ( aFood ) {
+  //   return function ( answers ) {
+  //     return answers[ aFood ];
+  //   }
+  // }
+
+  // inquirer.prompt(prompts, function (answers) {
+  //   console.log( JSON.stringify(answers, null, "  ") );
+  // });
 
 BriefsGenerator.prototype.askForUI = function askForUI() {
   var cb = this.async();
@@ -286,14 +342,11 @@ BriefsGenerator.prototype.jsPreprocessor = function jsPreprocessor() {
   }
 };
 
-// BriefsGenerator.prototype.mixinLibraries = function mixinLibraries() {
-//   if (this.includeBourbon) {
-//     this.copy('conditional/styles/application.bootstrap.scss', 'app/styles/application.scss');
-//   }
-//   if (this.includeNeat) {
-//     this.copy('conditional/styles/application.foundation.scss', 'app/styles/application.scss');
-//   }
-// };
+BriefsGenerator.prototype.mixinLibraries = function mixinLibraries() {
+  if (this.barspoon) {
+    this.directory('conditional/codefashioned', 'vendor/codefashioned');
+  }
+};
 
 // BriefsGenerator.prototype.uiFramework = function uiFramework() {
 //   if (this.ui === 'bootstrap') {
