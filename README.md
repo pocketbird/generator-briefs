@@ -2,9 +2,17 @@
 
 Undergarments for your project.
 
-Briefs is a Yeoman generator to get you building interfaces faster. [Jekyll](http://jekyllrb.com/) is included for static site generation. [Bourbon](http://bourbon.io), [Neat](http://neat.bourbon.io) & [Bitters](http://bitters.bourbon.io/) are included to help you write CSS faster.
+Briefs is a Yeoman generator to get you building interfaces faster.
+
+Some base styles (inspired by Thoughtbot's [Bitters](http://bitters.bourbon.io/)) are included to get you up and running quickly.
+
+[Jekyll](http://jekyllrb.com/) is included for static site generation.
 
 [Grunt](http://gruntjs.com/) is used for compilation of [Sass](http://sass-lang.com) and [CoffeeScript](http://coffeescript.org) (optional). [Bower](http://bower.io/) is used for managing dependencies.
+
+Choose to include Thoughtbot's mixin libraries [Bourbon](http://bourbon.io) and/or [Neat](http://neat.bourbon.io) and, if desired, a UI Framework.
+
+Briefs currently supports [Bootstrap](http://getbootstrap.com), [Foundation](http://foundation.zurb.com/), and [Materialize](http://materializecss.com/).
 
 ### Prerequisites
 If you do not have [Node.js](http://nodejs.org/) `>=0.12`, [Yeoman](http://yeoman.io/) `>=1.4.5`, [Ruby](https://www.ruby-lang.org/en/) `>=1.9` and the [Bundler](http://bundler.io/) gem installed, you must do that first:

@@ -1,11 +1,9 @@
-%media,
-.media {
+%media {
   @extend %clearfix;
   display: block;
 }
 
-%media__img,
-.media__img {
+%media__img {
   float: left;
   margin-right: $media-gutter;
   max-height: 100%; // prevent images from bleeding outside the media object
@@ -15,8 +13,7 @@
   }
 }
 
-%media__body,
-.media__body {
+%media__body {
   overflow: hidden;
   display: block;
 

@@ -295,20 +295,20 @@ BriefsGenerator.prototype.jsPreprocessor = function jsPreprocessor() {
 //   }
 // };
 
-BriefsGenerator.prototype.uiFramework = function uiFramework() {
-  if (this.ui === 'bootstrap') {
-    this.copy('conditional/styles/application.bootstrap.scss', 'app/styles/application.scss');
-  }
-  else if (this.ui === 'foundation') {
-    this.copy('conditional/styles/application.foundation.scss', 'app/styles/application.scss');
-  }
-  else if (this.ui === 'materialize') {
-    this.copy('conditional/styles/application.materialize.scss', 'app/styles/application.scss');
-  }
-  else {
-    this.copy('conditional/styles/application.default.scss', 'app/styles/application.scss');
-  }
-};
+// BriefsGenerator.prototype.uiFramework = function uiFramework() {
+//   if (this.ui === 'bootstrap') {
+//     this.copy('conditional/styles/application.bootstrap.scss', 'app/styles/application.scss');
+//   }
+//   else if (this.ui === 'foundation') {
+//     this.copy('conditional/styles/application.foundation.scss', 'app/styles/application.scss');
+//   }
+//   else if (this.ui === 'materialize') {
+//     this.copy('conditional/styles/application.materialize.scss', 'app/styles/application.scss');
+//   }
+//   else {
+//     this.copy('conditional/styles/application.default.scss', 'app/styles/application.scss');
+//   }
+// };
 
 // BriefsGenerator.prototype.installBitters = function installBitters() {
 //   var root = shelljs.pwd();

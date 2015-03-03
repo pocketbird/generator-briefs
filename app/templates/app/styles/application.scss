@@ -7,15 +7,16 @@
 
 
 /* Global: Globally available variables and config.
- * Bootstrap (sass version)
- * Bourbon
- * Grid Settings/Neat
+ * Bower Components
  * Fonts
  * Variables
- * -----------------------------------------------------------------------------*/
-@import "bower_components/bourbon/dist/bourbon";
+ * -----------------------------------------------------------------------------*/<% if (ui === 'bootstrap') { %>
+@import "bower_components/twitter-bootstrap-sass/assets/stylesheets/bootstrap";<% } %><% if (ui === 'foundation') { %>
+@import "bower_components/foundation/scss/foundation.scss";<% } %><% if (ui === 'materialize') { %>
+@import "bower_components/materialize/sass/materialize.scss";<% } %><% if (bourbon) { %>
+@import "bower_components/bourbon/dist/bourbon";<% } %><% if (neat) { %>
 @import "global/grid-settings";
-@import "bower_components/neat/app/assets/stylesheets/neat";
+@import "bower_components/neat/app/assets/stylesheets/neat";<% } %>
 @import "global/fonts";
 @import "global/variables";
 
