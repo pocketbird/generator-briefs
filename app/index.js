@@ -102,44 +102,32 @@ BriefsGenerator.prototype.askForTools = function askForTools() {
   }.bind(this));
 };
 
-// BriefsGenerator.prototype.askForMixins = function askForMixins() {
-//   var cb = this.async();
-//   var prompts = [
-//     {
-//       name: 'mixins',
-//       type: 'checkbox',
-//       message: 'What Mixin Libraries would you like to use?  Press `space` to select.',
-//       choices: [
-//         {
-//           name: 'Bourbon',
-//           value: 'includeBourbon',
-//           checked: false
-//         },
-//         {
-//           name: 'Neat'
-//           value: 'includeNeat',
-//           checked: false
-//         }
-//       ]
-//     }
-//   ]
+BriefsGenerator.prototype.askForMixins = function askForMixins() {
+  var cb = this.async();
+  var prompts = [
+    {
+      name: 'bourbon',
+      type: 'confirm',
+      message: 'Include Bourbon?',
+      default: false
+    },
+    {
+      name: 'neat',
+      type: 'confirm',
+      message: 'Include Neat?',
+      default: false
+    }
+  ]
 
-//   console.log(chalk.yellow('\nMixin Libraries.') + ' →');
+  console.log(chalk.yellow('\Mixin Libraries.') + ' →');
 
-//   this.prompt(prompts, function (props) {
+  this.prompt(prompts, function (props) {
+    this.bourbon = props.bourbon;
+    this.neat = props.neat;
 
-//     var mixinLibraries = props.mixinLibraries;
-
-//     function hasMixinLibrary (library) {
-//       return mixinLibraries.indexOf(library) !== -1;
-//     }
-
-//     this.includeBourbon = hasMixinLibrary('includeBourbon');
-//     this.includeNeat = hasMixinLibrary('includeNeat');
-
-//     cb();
-//   }.bind(this));
-// };
+    cb();
+  }.bind(this));
+};
 
 BriefsGenerator.prototype.askForUI = function askForUI() {
   var cb = this.async();
@@ -308,15 +296,16 @@ BriefsGenerator.prototype.jsPreprocessor = function jsPreprocessor() {
 // };
 
 BriefsGenerator.prototype.uiFramework = function uiFramework() {
-  if (this.ui === 'Bootstrap') {
+  if (this.ui === 'bootstrap') {
     this.copy('conditional/styles/application.bootstrap.scss', 'app/styles/application.scss');
   }
-  if (this.ui === 'Foundation') {
+  else if (this.ui === 'foundation') {
     this.copy('conditional/styles/application.foundation.scss', 'app/styles/application.scss');
   }
-  if (this.ui === 'Materialize') {
+  else if (this.ui === 'materialize') {
     this.copy('conditional/styles/application.materialize.scss', 'app/styles/application.scss');
-  } else {
+  }
+  else {
     this.copy('conditional/styles/application.default.scss', 'app/styles/application.scss');
   }
 };
