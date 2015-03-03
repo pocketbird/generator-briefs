@@ -104,41 +104,6 @@ BriefsGenerator.prototype.askForTools = function askForTools() {
 
 BriefsGenerator.prototype.askForMixins = function askForMixins() {
   var cb = this.async();
-//   var prompts = [
-//     {
-//       name: 'bourbon',
-//       type: 'confirm',
-//       message: 'Include Bourbon?',
-//       default: false
-//     },
-//     {
-//       name: 'neat',
-//       value: 'neat',
-//       type: 'confirm',
-//       message: 'Include Neat?',
-//       default: false
-//     }
-//   ]
-
-//   var barspoonPrompt = [
-//     {
-//       name: 'barspoon',
-//       type: 'confirm',
-//       message: 'Include BarSpoon (Bootstrap-style Neat grid helpers)?',
-//       default: false
-//     }
-//   ]
-
-//   console.log(chalk.yellow('\nMixin Libraries.') + ' →');
-
-//   this.prompt(prompts, function (props) {
-//     this.bourbon = props.bourbon;
-//     this.neat = props.neat;
-
-//     cb();
-//   }.bind(this));
-// };
-
   var prompts = [
     {
       type: "confirm",
@@ -174,16 +139,6 @@ BriefsGenerator.prototype.askForMixins = function askForMixins() {
     cb();
   }.bind(this));
 };
-
-  // function likesFood ( aFood ) {
-  //   return function ( answers ) {
-  //     return answers[ aFood ];
-  //   }
-  // }
-
-  // inquirer.prompt(prompts, function (answers) {
-  //   console.log( JSON.stringify(answers, null, "  ") );
-  // });
 
 BriefsGenerator.prototype.askForUI = function askForUI() {
   var cb = this.async();
@@ -347,37 +302,3 @@ BriefsGenerator.prototype.mixinLibraries = function mixinLibraries() {
     this.directory('conditional/codefashioned', 'vendor/codefashioned');
   }
 };
-
-// BriefsGenerator.prototype.uiFramework = function uiFramework() {
-//   if (this.ui === 'bootstrap') {
-//     this.copy('conditional/styles/application.bootstrap.scss', 'app/styles/application.scss');
-//   }
-//   else if (this.ui === 'foundation') {
-//     this.copy('conditional/styles/application.foundation.scss', 'app/styles/application.scss');
-//   }
-//   else if (this.ui === 'materialize') {
-//     this.copy('conditional/styles/application.materialize.scss', 'app/styles/application.scss');
-//   }
-//   else {
-//     this.copy('conditional/styles/application.default.scss', 'app/styles/application.scss');
-//   }
-// };
-
-// BriefsGenerator.prototype.installBitters = function installBitters() {
-//   var root = shelljs.pwd();
-
-//   // Install Bitters
-//   shelljs.cd('app/styles');
-//   shelljs.exec('bundle exec bitters install');
-//   shelljs.cd(root);
-
-//   // Replace Rails-style @import of neat-helpers
-//   var gridSettings = shelljs.cat('app/styles/base/_grid-settings.scss');
-//   gridSettings = gridSettings.replace(/^@import 'neat-helpers';.*/, "@import 'neat/app/assets/stylesheets/neat-helpers';");
-//   gridSettings.to('app/styles/base/_grid-settings.scss');
-
-//   // Uncomment Neat grid-settings @import
-//   var base = shelljs.cat('app/styles/base/_base.scss');
-//   base = base.replace(/^\/\/ @import 'grid-settings';.*/, "@import 'grid-settings';");
-//   base.to('app/styles/base/_base.scss');
-// };
