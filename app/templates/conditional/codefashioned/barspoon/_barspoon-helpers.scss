@@ -4,144 +4,82 @@
 
 .row {
   @include span-columns(12);
+
+  &:not(:first-child) {
+    margin-top: $bpu / 2;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: $bpu / 2;
+  }
 }
 
 .one-half,
 .two-fourths,
 .three-sixths {
-  @include grid-span(6);
-
-  &.shift-center {
-    @include shift(3);
-  }
-
-  &.shift-right {
-    @include shift(6);
-  }
+  @include grid-span(6, 3, 6);
 }
 
 .one-third,
 .two-sixths {
-  @include grid-span(4);
-
-  &.shift-center {
-    @include shift(4);
-  }
-
-  &.shift-right {
-    @include shift(8);
-  }
+  @include grid-span(4, 4, 8);
 }
 
 .two-thirds,
 .four-sixths {
-  @include grid-span(8);
-
-  &.shift-center {
-    @include shift(2);
-  }
-
-  &.shift-right {
-    @include shift(4);
-  }
+  @include grid-span(8, 2, 4);
 }
 
 .one-fourth {
-  @include grid-span(3);
-
-  &.shift-center {
-    @include shift(4.5);
-  }
-
-  &.shift-right {
-    @include shift(9);
-  }
+  @include grid-span(3, 4.5, 9);
 }
 
 .three-fourths {
-  @include grid-span(9);
-
-  &.shift-center {
-    @include shift(1.5);
-  }
-
-  &.shift-right {
-    @include shift(3);
-  }
+  @include grid-span(9, 1.5, 3);
 }
 
-%one-fifth {
-  @include grid-span(3 of 15);
+// .one-fifth {
+//   @include grid-span(3 of 15, 6 of 15, 12 of 15);
+// }
 
-  &.shift-center {
-    @include shift(6 of 15);
-  }
+// .two-fifths {
+//   @include grid-span(6 of 15, 4.5 of 15, 9 of 15);
+// }
 
-  &.shift-right {
-    @include shift(12 of 15);
-  }
-}
+// .three-fifths {
+//   @include grid-span(9 of 15, 3 of 15, 6 of 15);
+// }
 
-%two-fifths {
-  @include grid-span(6 of 15);
-
-  &.shift-center {
-    @include shift(4.5 of 15);
-  }
-
-  &.shift-right {
-    @include shift(9 of 15);
-  }
-}
-
-%three-fifths {
-  @include grid-span(9 of 15);
-
-  &.shift-center {
-    @include shift(3 of 15);
-  }
-
-  &.shift-right {
-    @include shift(6 of 15);
-  }
-}
-
-%four-fifths {
-  @include grid-span(12 of 15);
-
-  &.shift-center {
-    @include shift(3);
-  }
-
-  &.shift-right {
-    @include shift(6);
-  }
-}
+// .four-fifths {
+//   @include grid-span(12 of 15, 1.5 of 15, 3 of 15);
+// }
 
 .one-sixth {
-  @include grid-span(2);
-
-  &.shift-center {
-    @include shift(5);
-  }
-
-  &.shift-right {
-    @include shift(10);
-  }
+  @include grid-span(2, 5, 10);
 }
 
 .five-sixths {
-  @include grid-span(10);
-
-  &.shift-center {
-    @include shift(1);
-  }
-
-  &.shift-right {
-    @include shift(2);
-  }
+  @include grid-span(10, 1, 2);
 }
 
 .twelve {
-  @include grid-span(12);
+  @include span-columns(12);
+
+  &--screen-sm {
+    @include media($screen-sm) {
+      @include span-columns(12);
+    }
+  }
+
+  &--screen-md {
+    @include media($screen-md) {
+      @include span-columns(12);
+    }
+  }
+
+  &--screen-lg {
+    @include media($screen-lg) {
+      @include span-columns(12);
+    }
+  }
 }

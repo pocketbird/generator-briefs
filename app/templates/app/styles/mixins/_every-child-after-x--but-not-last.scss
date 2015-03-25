@@ -1,0 +1,11 @@
+/// Apply some styles to every child beyond the xth child but, not the last child
+///
+/// @parameter number-of-children
+///
+/// @author Colin Carter
+///
+@mixin every-child-after-x--but-not-last($number-of-children) {
+  &:nth-child(n+#{$number-of-children}):not(:last-child) {
+    @content
+  }
+}

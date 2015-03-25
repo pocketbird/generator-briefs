@@ -2,17 +2,20 @@
   @include clearfix;
 }
 
+/// Hides text - not accessibility friendly
 %hide-text {
   @include hide-text;
 }
 
-%pull-left {
-  float: left !important;
-}
+// Included with bourbon
+// %pull-left {
+//   float: left !important;
+// }
 
-%pull-right {
-  float: right !important;
-}
+// Included with bourbon
+// %pull-right {
+//   float: right !important;
+// }
 
 %text-left {
   text-align: left !important;
@@ -30,8 +33,8 @@
   vertical-align: top !important;
 }
 
-%valign-middle {
-  vertical-align: middle !important;
+%valign--middle {
+  @include vertical-align;
 }
 
 %valign-bottom {
@@ -56,4 +59,20 @@
 
 %no-padding {
   padding: 0 !important;
+}
+
+%make-bold {
+  font-weight: 900 !important;
+}
+
+%inline-block {
+  display: inline-block !important;
+}
+
+%hidden--still-accessible {
+  @include hide-content;
+}
+
+%hidden--even-from-screen-readers {
+  display: none !important;
 }

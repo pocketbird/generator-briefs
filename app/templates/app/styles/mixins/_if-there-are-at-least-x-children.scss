@@ -1,0 +1,13 @@
+/// If there are at least `x` children, apply some styles
+///
+/// @parameter number-of-children
+/// @parameter class-name
+///
+/// @author Colin Carter
+///
+@mixin if-there-are-at-least-x-children($number-of-children, $class-name) {
+  &:nth-last-child(n+#{$number-of-children}),
+  &:nth-last-child(n+#{$number-of-children}) ~ .#{$class-name} {
+    @content
+  }
+}

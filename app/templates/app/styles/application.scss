@@ -26,11 +26,16 @@
  * -----------------------------------------------------------------------------*/
 @import "mixins/background-opacity";
 @import "mixins/button-variant";
+@import "mixins/every-child-after-x--but-not-last";
+@import "mixins/every-child-after-x";
 @import "mixins/flash";
+@import "mixins/hide-content--accessible";
+@import "mixins/if-there-are-at-least-x-children";
 @import "mixins/link-variant";
 @import "mixins/placeholder";
 @import "mixins/selection";
 @import "mixins/text-overflow";
+@import "mixins/vertical-align";
 
 
 

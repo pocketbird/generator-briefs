@@ -1,0 +1,11 @@
+/// Apply some styles to every child beyond the xth child
+///
+/// @parameter number-of-children
+///
+/// @author Colin Carter
+///
+@mixin every-child-after-x($number-of-children) {
+  &:nth-child(n+#{$number-of-children}) {
+    @content
+  }
+}

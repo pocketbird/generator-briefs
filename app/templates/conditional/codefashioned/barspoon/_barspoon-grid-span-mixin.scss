@@ -1,21 +1,61 @@
-@mixin grid-span($grid-span) {
+@mixin grid-span($grid-span, $shift-right, $shift-center) {
   @include span-columns($grid-span);
+
+  &--shift-center {
+    @include span-columns($grid-span);
+    @include shift($shift-center);
+  }
+
+  &--shift-right {
+    @include span-columns($grid-span);
+    @include shift($shift-right);
+  }
 
   &--screen-sm {
     @include media($screen-sm) {
       @include span-columns($grid-span);
+
+      &--shift-center {
+        @include span-columns($grid-span);
+        @include shift($shift-center);
+      }
+
+      &--shift-right {
+        @include span-columns($grid-span);
+        @include shift($shift-right);
+      }
     }
   }
 
   &--screen-md {
     @include media($screen-md) {
       @include span-columns($grid-span);
+
+      &--shift-center {
+        @include span-columns($grid-span);
+        @include shift($shift-center);
+      }
+
+      &--shift-right {
+        @include span-columns($grid-span);
+        @include shift($shift-right);
+      }
     }
   }
 
   &--screen-lg {
     @include media($screen-lg) {
       @include span-columns($grid-span);
+
+      &--shift-center {
+        @include span-columns($grid-span);
+        @include shift($shift-center);
+      }
+
+      &--shift-right {
+        @include span-columns($grid-span);
+        @include shift($shift-right);
+      }
     }
   }
 }

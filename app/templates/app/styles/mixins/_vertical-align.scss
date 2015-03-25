@@ -1,0 +1,11 @@
+/// Vertically align an element's content
+///
+/// @author Sebastian Ekström
+@mixin vertical-align {
+  position: relative !important;
+  top: 50% !important;
+
+          transform: translateY(-50%) !important;
+      -ms-transform: translateY(-50%) !important;
+  -webkit-transform: translateY(-50%) !important;
+}
