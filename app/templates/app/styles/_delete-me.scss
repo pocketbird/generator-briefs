@@ -1,22 +1,12 @@
-body {
-  color: $dark-gray--light;
-}
-
-.delete-me {
+.hero {
+  color: $base-font-color;
+  height: 100vh;
+  text-align: center;
   @include align-items(center);
   @include display(flex);
   @include justify-content(center);
-  height: 100vh;
 
-  .inner {
-    text-align: center;
-
-    img {
-      margin-bottom: 0.15em;
-    }
-
-    h1 {
-      font-weight: 200;
-    }
+  &__logo {
+    margin-bottom: 0.15em;
   }
 }

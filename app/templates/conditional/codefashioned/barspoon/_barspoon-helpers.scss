@@ -6,11 +6,11 @@
   @include span-columns(12);
 
   &:not(:first-child) {
-    margin-top: $bpu / 2;
+    margin-top: $row-margin;
   }
 
   &:not(:last-child) {
-    margin-bottom: $bpu / 2;
+    margin-bottom: $row-margin;
   }
 }
 
