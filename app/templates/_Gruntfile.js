@@ -328,6 +328,18 @@ module.exports = function (grunt) {
         '!<%%= yeoman.app %>/scripts/vendor/**/*'
       ]
     },
+    scsslint: {
+      options: {
+        bundleExec: true,
+        config: '.scss-lint.yml',
+        reporterOutput: 'scss-lint-report.xml',
+        colorizeOutput: true
+      },
+      check: [
+        '<%= yeoman.app %>/styles/**/*.scss',
+        '<%= yeoman.app %>/styles/**/**/*.scss'
+      ]
+    },
     csscss: {
       options: {
         bundleExec: true,
