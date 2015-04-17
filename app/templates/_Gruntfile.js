@@ -331,9 +331,10 @@ module.exports = function (grunt) {
     scsslint: {
       options: {
         bundleExec: true,
+        colorizeOutput: true,
         config: '.scss-lint.yml',
-        reporterOutput: 'scss-lint-report.xml',
-        colorizeOutput: true
+        force: true,
+        reporterOutput: 'scss-lint-report.xml'
       },
       check: [
         '<%= yeoman.app %>/styles/**/*.scss',
@@ -410,6 +411,7 @@ module.exports = function (grunt) {
     'sass:dist',<% if (jsPre === 'coffeescript') { %>
     'coffee:dist',<% } %>
     'jshint:all',
+    'scsslint:check',
     'csscss:check',
     'csslint:check'
   ]);

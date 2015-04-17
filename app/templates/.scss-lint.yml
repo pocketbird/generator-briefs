@@ -1,4 +1,4 @@
-scss_files: 'app/styles/**/*.scss', 'app/styles/**/**/*.scss'
+scss_files: 'app/styles/**/*.scss'
 
 exclude: 'vendor/**/*.{css,scss}'
 
@@ -193,8 +193,8 @@ linters:
   VariableForProperty:
     enabled: true
     properties: [
-      - color
-      - font
+      'color',
+      'font'
     ]
 
   VendorPrefix:
