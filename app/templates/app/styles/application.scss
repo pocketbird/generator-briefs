@@ -11,7 +11,7 @@
  * Fonts
  * Variables
  * -----------------------------------------------------------------------------*/<% if (ui === 'bootstrap') { %>
-@import "bower_components/twitter-bootstrap-sass/assets/stylesheets/bootstrap";<% } %><% if (ui === 'foundation') { %>
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap";<% } %><% if (ui === 'foundation') { %>
 @import "bower_components/foundation/scss/foundation.scss";<% } %><% if (ui === 'materialize') { %>
 @import "bower_components/materialize/sass/materialize.scss";<% } %><% if (bourbon) { %>
 @import "bower_components/bourbon/dist/bourbon";<% } %><% if (neat) { %>
