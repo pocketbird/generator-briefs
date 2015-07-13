@@ -119,14 +119,14 @@ BriefsGenerator.prototype.askForMixins = function askForMixins() {
         return answers.bourbon;
       }
     },
-    {
-      type: "confirm",
-      name: "barspoon",
-      message: "Include BarSpoon (Bootstrap-style Neat grid helpers)?",
-      when: function ( answers ) {
-        return answers.neat;
-      }
-    }
+    // {
+    //   type: "confirm",
+    //   name: "barspoon",
+    //   message: "Include BarSpoon (Bootstrap-style Neat grid helpers)?",
+    //   when: function ( answers ) {
+    //     return answers.neat;
+    //   }
+    // }
   ]
 
   console.log(chalk.yellow('\nMixin Libraries.') + ' →');
@@ -134,7 +134,7 @@ BriefsGenerator.prototype.askForMixins = function askForMixins() {
   this.prompt(prompts, function (props) {
     this.bourbon = props.bourbon;
     this.neat = props.neat;
-    this.barspoon = props.barspoon;
+    // this.barspoon = props.barspoon;
 
     cb();
   }.bind(this));
@@ -297,8 +297,8 @@ BriefsGenerator.prototype.jsPreprocessor = function jsPreprocessor() {
   }
 };
 
-BriefsGenerator.prototype.mixinLibraries = function mixinLibraries() {
-  if (this.barspoon) {
-    this.directory('conditional/codefashioned', 'vendor/codefashioned');
-  }
-};
+// BriefsGenerator.prototype.mixinLibraries = function mixinLibraries() {
+//   if (this.barspoon) {
+//     this.directory('conditional/codefashioned', 'vendor/codefashioned');
+//   }
+// };
