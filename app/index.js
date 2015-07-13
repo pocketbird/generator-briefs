@@ -297,6 +297,27 @@ BriefsGenerator.prototype.jsPreprocessor = function jsPreprocessor() {
   }
 };
 
+BriefsGenerator.prototype.mvcFramework = function mvcFramework() {
+  var cb = this.async();
+  var prompts = [
+    {
+      name: 'mvc',
+      type: 'list',
+      message: 'MVC Framework',
+      choices: ['None', 'Angular', 'Ember', 'Backbone']
+    }
+  ]
+
+  console.log(chalk.yellow('\nMV* Framework.') + ' →');
+
+  this.prompt(prompts, function (props) {
+    // Multiple choice 'None' to false
+    this.mvc = props.mvc === 'None' ? false : props.mvc.toLowerCase();
+
+    cb();
+  }.bind(this));
+};
+
 // BriefsGenerator.prototype.mixinLibraries = function mixinLibraries() {
 //   if (this.barspoon) {
 //     this.directory('conditional/codefashioned', 'vendor/codefashioned');
