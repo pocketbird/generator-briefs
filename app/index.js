@@ -42,12 +42,12 @@ BriefsGenerator.prototype.askForUser = function askForUser() {
   var prompts = [
     {
       name: 'authorName',
-      message: 'What name should I write on the tag?',
+      message: 'What is your name?',
       default: this.gitInfo.name
     },
     {
       name: 'authorEmail',
-      message: 'What email should I use to contact you if I find your briefs?',
+      message: 'What is your email?',
       default: this.gitInfo.email
     }
   ];
