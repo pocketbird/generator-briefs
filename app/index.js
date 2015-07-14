@@ -42,12 +42,12 @@ BriefsGenerator.prototype.askForUser = function askForUser() {
   var prompts = [
     {
       name: 'authorName',
-      message: 'What name should I write on the tag?',
+      message: 'What is your name?',
       default: this.gitInfo.name
     },
     {
       name: 'authorEmail',
-      message: 'What email should I use to contact you if I find your briefs?',
+      message: 'What is your email?',
       default: this.gitInfo.email
     }
   ];
@@ -102,29 +102,156 @@ BriefsGenerator.prototype.askForTools = function askForTools() {
   }.bind(this));
 };
 
+BriefsGenerator.prototype.askForMvcFramework = function askForMvcFramework() {
+  var cb = this.async();
+  var prompts = [
+    {
+      name: 'mvc',
+      type: 'list',
+      message: 'MV* Framework',
+      choices: ['None', 'Angular', 'Ember', 'Backbone']
+    },
+    {
+      name: 'animateModule',
+      type: 'confirm',
+      message: 'Include angular-animate.js? (Default: Yes)',
+      default: true,
+      when: function (answers) {
+        if (answers.mvc === 'Angular') {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+    },
+    {
+      name: 'ariaModule',
+      type: 'confirm',
+      message: 'Include angular-aria.js? (Default: Yes)',
+      default: true,
+      when: function (answers) {
+        if (answers.mvc === 'Angular') {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+    },
+    {
+      name: 'cookiesModule',
+      type: 'confirm',
+      message: 'Include angular-cookies.js? (Default: Yes)',
+      default: true,
+      when: function (answers) {
+        if (answers.mvc === 'Angular') {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+    },
+    {
+      name: 'messagesModule',
+      type: 'confirm',
+      message: 'Include angular-messages.js? (Default: Yes)',
+      default: true,
+      when: function (answers) {
+        if (answers.mvc === 'Angular') {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+    },
+    {
+      name: 'resourceModule',
+      type: 'confirm',
+      message: 'Include angular-resource.js? (Default: Yes)',
+      default: true,
+      when: function (answers) {
+        if (answers.mvc === 'Angular') {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+    },
+    {
+      name: 'routeModule',
+      type: 'confirm',
+      message: 'Include angular-route.js? (Default: Yes)',
+      default: true,
+      when: function (answers) {
+        if (answers.mvc === 'Angular') {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+    },
+    {
+      name: 'sanitizeModule',
+      type: 'confirm',
+      message: 'Include angular-sanitize.js? (Default: Yes)',
+      default: true,
+      when: function (answers) {
+        if (answers.mvc === 'Angular') {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+    },
+    {
+      name: 'touchModule',
+      type: 'confirm',
+      message: 'Include angular-touch.js? (Default: Yes)',
+      default: true,
+      when: function (answers) {
+        if (answers.mvc === 'Angular') {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+    }
+  ]
+
+  console.log(chalk.yellow('\nMV* Framework.') + ' →');
+
+  this.prompt(prompts, function (props) {
+    // Multiple choice 'None' to false
+    this.mvc = props.mvc === 'None' ? false : props.mvc.toLowerCase();
+
+    this.animateModule = props.animateModule;
+
+    cb();
+  }.bind(this));
+};
+
 BriefsGenerator.prototype.askForMixins = function askForMixins() {
   var cb = this.async();
   var prompts = [
     {
-      type: "confirm",
       name: "bourbon",
+      type: "confirm",
       message: "Include Bourbon?",
       default: false
     },
     {
-      type: "confirm",
       name: "neat",
-      message: "Include Neat?",
-      when: function ( answers ) {
-        return answers.bourbon;
-      }
-    },
-    {
       type: "confirm",
-      name: "barspoon",
-      message: "Include BarSpoon (Bootstrap-style Neat grid helpers)?",
-      when: function ( answers ) {
-        return answers.neat;
+      message: "Include Neat?",
+      when: function (answers) {
+        return answers.bourbon;
       }
     }
   ]
@@ -134,7 +261,6 @@ BriefsGenerator.prototype.askForMixins = function askForMixins() {
   this.prompt(prompts, function (props) {
     this.bourbon = props.bourbon;
     this.neat = props.neat;
-    this.barspoon = props.barspoon;
 
     cb();
   }.bind(this));
@@ -297,8 +423,16 @@ BriefsGenerator.prototype.jsPreprocessor = function jsPreprocessor() {
   }
 };
 
-BriefsGenerator.prototype.mixinLibraries = function mixinLibraries() {
-  if (this.barspoon) {
-    this.directory('conditional/codefashioned', 'vendor/codefashioned');
+BriefsGenerator.prototype.mvcFramework = function mvcFramework() {
+  if (this.mvc === 'angular') {
+    this.copy('conditional/mvc/angular/test.html', 'app/angular/test.html');
+  }
+
+  if (this.mvc === 'ember') {
+    this.copy('conditional/mvc/ember/test.html', 'app/ember/test.html');
+  }
+
+  if (this.mvc === 'backbone') {
+    this.copy('conditional/mvc/backbone/test.html', 'app/backbone/test.html');
   }
 };
