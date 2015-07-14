@@ -2,14 +2,16 @@
   "name": "<%= _.slugify(appName) %>",
   "version": "0.0.0",
   "dependencies": {
-    "normalize-css": "~3.0.2",
-    "bourbon": "~4.0.2",
-    "neat": "~1.7.0",<% if (ui === 'bootstrap') { %>
+    "normalize-css": "~3.0.2",<% if (bourbon === true) { %>
+    "bourbon": "~4.0.2",<% } %><% if (neat === true) { %>
+    "neat": "~1.7.0",<% } %><% if (ui === 'bootstrap') { %>
     "bootstrap-sass": "~3.3.5",<% } %><% if (ui === 'foundation') { %>
     "foundation": "~5.5.1",<% } %><% if (ui === 'materialize') { %>
     "materialize": "~0.97.0",<% } %>
     "modernizr": "~2.8.3",
-    "jquery": "~1.11.3"
+    "jquery": "~1.11.3"<% if (mvc === 'angular') { %>,
+    "angular": "*"<% } %><% if (animateModule === true) { %>,
+    "angular-animate": "*"<% } %>
   },
   "devDependencies": {}
 }
